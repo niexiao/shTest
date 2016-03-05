@@ -42,6 +42,7 @@ public class LoginAction {
 	public String test3() {
 		//DFASDF
 		//你才是身什么意思
+		//youlaiyi ci xiugia 
 		return "welcome";
 	}
 
