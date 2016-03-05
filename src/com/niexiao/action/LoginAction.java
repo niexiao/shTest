@@ -40,6 +40,7 @@ public class LoginAction {
 	}
 
 	public String test3() {
+		//DFASDF
 		return "welcome";
 	}
 
