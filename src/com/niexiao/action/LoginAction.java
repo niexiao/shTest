@@ -28,15 +28,18 @@ public class LoginAction {
 	}
 
 	public String test1() {
-		//branshi
-		//asdfds
-		
-		//asdfsdfa
+		// branshi
+		// asdfds
+
+		// asdfsdfa
 		return "welcome";
 	}
 
-
 	public String test2() {
+		return "welcome";
+	}
+
+	public String test3() {
 		return "welcome";
 	}
 
