@@ -41,6 +41,7 @@ public class LoginAction {
 
 	public String test3() {
 		//DFASDF
+		//niexiao
 		return "welcome";
 	}
 
