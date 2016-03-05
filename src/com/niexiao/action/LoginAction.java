@@ -41,8 +41,7 @@ public class LoginAction {
 
 	public String test3() {
 		//DFASDF
-		//niexiao
-		//5465
+		//你才是身什么意思
 		return "welcome";
 	}
 
