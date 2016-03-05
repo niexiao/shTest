@@ -30,9 +30,4 @@ public class LoginAction {
 	public String test1() {
 		return "welcome";
 	}
-
-	public String test2() {
-		return "welcome";
-	}
-
 }
