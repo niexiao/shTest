@@ -26,4 +26,8 @@ public class LoginAction {
 		userService.addUser(user);
 		return "welcome";
 	}
+
+	public String test1() {
+		return "welcome";
+	}
 }
