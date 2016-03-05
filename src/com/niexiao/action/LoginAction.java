@@ -34,4 +34,5 @@ public class LoginAction {
 	public String test2() {
 		return "welcome";
 	}
+
 }
