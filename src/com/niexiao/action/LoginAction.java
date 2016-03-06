@@ -26,24 +26,4 @@ public class LoginAction {
 		userService.addUser(user);
 		return "welcome";
 	}
-
-	public String test1() {
-		// branshi
-		// asdfds
-
-		// asdfsdfa
-		return "welcome";
-	}
-
-	public String test2() {
-		return "welcome";
-	}
-
-	public String test3() {
-		//DFASDF
-		//你才是身什么意思
-		//youlaiyi ci xiugia 
-		return "welcome";
-	}
-
 }
