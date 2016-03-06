@@ -13,4 +13,6 @@ import com.niexiao.model.User;
 public interface UserDao {
 
 	public String saveUser(User user);
+
+	public void deleteUser(String id);
 }

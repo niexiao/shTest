@@ -8,10 +8,6 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd"
 	default-lazy-init="true">
 
-	<!-- <bean -->
-	<!-- class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" 
-		/> -->
-
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">

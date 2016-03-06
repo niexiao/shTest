@@ -21,8 +21,10 @@ public class UserDaoTest {
 
 	@BeforeClass
 	public static void init() {
-		ApplicationContext context = new FileSystemXmlApplicationContext(
-				"/WebContent/WEB-INF/config/application-context.xml");
+		 ApplicationContext context = new FileSystemXmlApplicationContext(
+		 "classpath:test-application-context.xml");
+//		ApplicationContext context = new ClassPathXmlApplicationContext(
+//				"application-context.xml");
 		userService = context.getBean(UserService.class);
 
 	}
@@ -34,6 +36,12 @@ public class UserDaoTest {
 		user.setPassword("password");
 		String id = userService.addUser(user);
 		System.out.println("userId :" + id);
+	}
+
+	@Test
+	public void testDeleteUser() {
+		String id = "90";
+		userService.deleteUser(id);
 	}
 
 	@Ignore

@@ -11,4 +11,6 @@ import com.niexiao.model.User;
 public interface UserService {
 
 	public String addUser(User user);
+	
+	public void deleteUser(String id);
 }

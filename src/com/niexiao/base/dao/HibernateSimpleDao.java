@@ -1,4 +1,4 @@
-package com.niexiao.base;
+package com.niexiao.base.dao;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import org.springframework.util.Assert;
 public abstract class HibernateSimpleDao {
 
 	/**
-	 * 日志，可用于子类
+	 * 鐢ㄤ簬璁板綍鏃ュ織
 	 */
 	protected Logger log = LoggerFactory.getLogger(getClass());
 
