@@ -9,8 +9,8 @@ import javax.persistence.Table;
 import com.niexiao.base.entity.BaseEntity;
 
 @Entity
-public class User {
-	@Id
+@Table(name="test_user")
+public class User extends BaseEntity {
 	private String name;
 	private String password;
 

@@ -6,14 +6,25 @@ import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+@MappedSuperclass
+public  abstract class BaseEntity implements Serializable {
 
-public class BaseEntity implements Serializable {
-
-	/**
-	 * ID
-	 */
+	public BaseEntity() {
+		super();
+		this.id = UUID.randomUUID().toString();
+		this.remark = "";
+		this.deleted = false;
+		this.modifiedTime = new Timestamp(System.currentTimeMillis());
+		this.createTime = this.modifiedTime;
+	}	
+	
 	@Id
+	/**
+	 * 主键
+	 */
 	protected String id;
+	
 	/**
 	 * 备注
 	 */
@@ -40,7 +51,7 @@ public class BaseEntity implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	
 	public String getRemark() {
 		return remark;
 	}
@@ -73,13 +84,6 @@ public class BaseEntity implements Serializable {
 		this.createTime = createTime;
 	}
 
-	public BaseEntity() {
-		super();
-		this.id = UUID.randomUUID().toString();
-		this.remark = "";
-		this.deleted = false;
-		this.modifiedTime = new Timestamp(System.currentTimeMillis());
-		this.createTime = this.modifiedTime;
-	}
+	
 
 }
