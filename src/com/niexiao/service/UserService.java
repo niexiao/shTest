@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.niexiao.dao.UserDao;
-import com.niexiao.model.User;
+import com.niexiao.entity.User;
 
 public interface UserService {
 

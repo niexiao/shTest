@@ -44,7 +44,7 @@
 		<!-- 注意：我用的是Annotation的方式配置的Hibernate，这里的property的name是annotatedClasses -->
 		<property name="annotatedClasses">
 			<list>
-				<value>com.niexiao.model.User</value>
+				<value>com.niexiao.entity.User</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

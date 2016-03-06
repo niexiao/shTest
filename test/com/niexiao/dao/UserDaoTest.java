@@ -12,7 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import com.niexiao.model.User;
+import com.niexiao.entity.User;
 import com.niexiao.service.UserService;
 
 public class UserDaoTest {
@@ -21,10 +21,12 @@ public class UserDaoTest {
 
 	@BeforeClass
 	public static void init() {
-		 ApplicationContext context = new FileSystemXmlApplicationContext(
-		 "classpath:test-application-context.xml");
-//		ApplicationContext context = new ClassPathXmlApplicationContext(
-//				"application-context.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext(
+				"classpath:test-application-context.xml");
+		// ApplicationContext context = new ClassPathXmlApplicationContext(
+		// "application-context.xml");
+		SessionFactory sessionFactory = (SessionFactory) context
+				.getBean("sessionFactory");
 		userService = context.getBean(UserService.class);
 
 	}
@@ -49,8 +51,7 @@ public class UserDaoTest {
 	public void test() {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"/WebContent/WEB-INF/config/application-context.xml");
-		SessionFactory sessionFactory = (SessionFactory) context
-				.getBean("sessionFactory");
+
 	}
 
 }

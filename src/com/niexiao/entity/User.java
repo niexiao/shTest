@@ -1,27 +1,18 @@
-package com.niexiao.model;
+package com.niexiao.entity;
 
-import java.io.Serializable;
 import java.util.UUID;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.niexiao.base.entity.BaseEntity;
 
 @Entity
-public class User implements Serializable {
+public class User {
 	@Id
-	private String id;
 	private String name;
 	private String password;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -38,9 +29,5 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public User() {
-		this.id = UUID.randomUUID().toString();
-	}
-
+	
 }

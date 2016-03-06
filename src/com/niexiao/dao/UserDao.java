@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.niexiao.model.User;
+import com.niexiao.entity.User;
 
 public interface UserDao {
 

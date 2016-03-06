@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.niexiao.dao.UserDao;
-import com.niexiao.model.User;
+import com.niexiao.entity.User;
 import com.niexiao.service.UserService;
 
 @Controller

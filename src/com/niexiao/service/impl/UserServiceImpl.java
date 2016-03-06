@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niexiao.dao.UserDao;
-import com.niexiao.model.User;
+import com.niexiao.entity.User;
 import com.niexiao.service.UserService;
 
 @Service

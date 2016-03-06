@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niexiao.base.dao.HibernateBaseDao;
 import com.niexiao.dao.UserDao;
-import com.niexiao.model.User;
+import com.niexiao.entity.User;
 
 @Repository
 public class UserDaoImpl extends HibernateBaseDao<User, String> implements
