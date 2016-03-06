@@ -70,6 +70,7 @@ public class UserDaoTest {
 	@Ignore
 	@Test
 	public void test() {
+		///
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"/WebContent/WEB-INF/config/application-context.xml");
 
