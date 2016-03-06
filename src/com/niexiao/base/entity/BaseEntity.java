@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
 @MappedSuperclass
-public  abstract class BaseEntity implements Serializable {
+public abstract class BaseEntity implements Serializable {
 
 	public BaseEntity() {
 		super();
@@ -17,14 +17,14 @@ public  abstract class BaseEntity implements Serializable {
 		this.deleted = false;
 		this.modifiedTime = new Timestamp(System.currentTimeMillis());
 		this.createTime = this.modifiedTime;
-	}	
-	
+	}
+
 	@Id
 	/**
 	 * 主键
 	 */
 	protected String id;
-	
+
 	/**
 	 * 备注
 	 */
@@ -48,15 +48,11 @@ public  abstract class BaseEntity implements Serializable {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
-	
 	public String getRemark() {
 		return remark;
 	}
 
-	public void setRemark(String remark) {
+	protected void setRemark(String remark) {
 		this.remark = remark;
 	}
 
@@ -64,7 +60,7 @@ public  abstract class BaseEntity implements Serializable {
 		return deleted;
 	}
 
-	public void setDeleted(boolean deleted) {
+	protected void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
 
@@ -72,18 +68,12 @@ public  abstract class BaseEntity implements Serializable {
 		return modifiedTime;
 	}
 
-	public void setModifiedTime(Timestamp modifiedTime) {
+	protected void setModifiedTime(Timestamp modifiedTime) {
 		this.modifiedTime = modifiedTime;
 	}
 
 	public Timestamp getCreateTime() {
 		return createTime;
 	}
-
-	public void setCreateTime(Timestamp createTime) {
-		this.createTime = createTime;
-	}
-
-	
 
 }

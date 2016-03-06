@@ -1,10 +1,7 @@
 package com.niexiao.service.impl;
 
-import java.sql.SQLException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.niexiao.dao.UserDao;
 import com.niexiao.entity.User;
@@ -27,6 +24,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void deleteUser(String id) {
 		this.userDao.deleteUser(id);
+	}
+
+	public User getUserById(String id) {
+		return this.userDao.getUserById(id);
 	}
 
 }

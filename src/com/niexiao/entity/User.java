@@ -1,33 +1,12 @@
 package com.niexiao.entity;
 
-import java.util.UUID;
-
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.niexiao.base.entity.BaseEntity;
+import com.niexiao.entity.base.UserEntity;
 
 @Entity
-@Table(name="test_user")
-public class User extends BaseEntity {
-	private String name;
-	private String password;
+@Table(name = "test_user")
+public class User extends UserEntity {
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
 }

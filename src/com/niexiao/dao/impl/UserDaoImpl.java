@@ -22,4 +22,9 @@ public class UserDaoImpl extends HibernateBaseDao<User, String> implements
 	protected Class<User> getEntityClass() {
 		return User.class;
 	}
+
+	@Override
+	public User getUserById(String id) {
+		return super.getById(id);
+	}
 }

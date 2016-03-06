@@ -45,6 +45,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.niexiao.entity.User</value>
+				<value>com.niexiao.entity.Organization</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

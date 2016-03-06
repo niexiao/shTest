@@ -7,6 +7,15 @@ import com.niexiao.base.exception.DAOException;
 public abstract class HibernateBaseDao<T, ID extends Serializable> extends
 		HibernateSimpleDao {
 
+	protected T getById(ID id) {
+		try {
+			return this.hibernateTemplate.get(getEntityClass(), id);
+		} catch (Exception e) {
+			super.log.error("获取数据失败," + e);
+			throw new DAOException("获取数据失败," + e.getMessage());
+		}
+	}
+
 	@SuppressWarnings("unchecked")
 	protected ID save(T entity) {
 		return (ID) super.hibernateTemplate.save(entity);
