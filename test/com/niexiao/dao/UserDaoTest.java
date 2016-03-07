@@ -20,12 +20,15 @@ public class UserDaoTest {
 	private static UserService userService;
 	private static OrganizationService organizationService;
 
+	
 	@BeforeClass
 	public static void init() {
+		@SuppressWarnings("resource")
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"classpath:config/application-context.xml");
 		// ApplicationContext context = new ClassPathXmlApplicationContext(
 		// "application-context.xml");
+		@SuppressWarnings("unused")
 		SessionFactory sessionFactory = (SessionFactory) context
 				.getBean("sessionFactory");
 		userService = context.getBean(UserService.class);
@@ -57,6 +60,7 @@ public class UserDaoTest {
 	public void testGetUser() {
 		User user = userService
 				.findById("4163d4d5-c8fd-436b-9b76-0306908a0382");
+		System.out.println("userName :" + user.getName());
 		System.out.println("organizationId :" + user.getOraganzation().getName());
 	}
 
@@ -65,14 +69,13 @@ public class UserDaoTest {
 		String id = "90";
 		userService.delete(id);
 	}
-
-	@Ignore
+	
 	@Test
-	public void test() {
-		///
-		ApplicationContext context = new FileSystemXmlApplicationContext(
-				"/WebContent/WEB-INF/config/application-context.xml");
-
+	public void testUpdateUser(){
+		User user = userService
+				.findById("4163d4d5-c8fd-436b-9b76-0306908a0382");
+		user.setName("ndnd");
+		userService.update(user);
+		System.out.println("organizationId :" + user.getOraganzation().getName());
 	}
-
 }

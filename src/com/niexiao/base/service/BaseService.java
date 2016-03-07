@@ -8,4 +8,6 @@ public interface BaseService<T, ID extends Serializable> {
 	public void delete(ID id);
 
 	public T findById(ID id);
+	
+	public void update(T entity);
 }

@@ -6,11 +6,14 @@ public interface BaseDao<T, ID extends Serializable> extends CommonDao {
 
 	public T findById(ID id);
 
-	public ID save(T entity); 
+	public ID save(T entity);
 
-	public void delete(T entity); 
-	
-	public void delete(ID id); 
+	public void delete(T entity);
 
-	public void delete(Class<T> clazz, ID id) ;
+	public void delete(ID id);
+
+	public void delete(Class<T> clazz, ID id);
+
+	public void update(T entity);
+
 }

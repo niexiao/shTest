@@ -27,4 +27,11 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Bas
 	public T findById(ID id) {
 		return this.baseDao.findById(id);
 	}
+
+	@Override
+	public void update(T entity) {
+		this.baseDao.update(entity);
+	}
+	
+	
 }
