@@ -1,15 +1,16 @@
-package com.niexiao.base.dao;
+package com.niexiao.base.dao.impl;
 
 import java.io.Serializable;
 
+import com.niexiao.base.dao.BaseDao;
 import com.niexiao.base.exception.DAOException;
 
-public abstract class HibernateBaseDao<T, ID extends Serializable> extends
-		HibernateSimpleDao {
+public abstract class BaseDaoImpl<T, ID extends Serializable> extends
+		CommonDaoImpl  implements BaseDao<T, ID>{
 
-	protected T getById(ID id) {
+	public T findById(ID id) {
 		try {
-			return this.hibernateTemplate.get(getEntityClass(), id);
+			return this.getHibernateTemplate().get(getEntityClass(), id);
 		} catch (Exception e) {
 			super.log.error("获取数据失败," + e);
 			throw new DAOException("获取数据失败," + e.getMessage());
@@ -17,27 +18,27 @@ public abstract class HibernateBaseDao<T, ID extends Serializable> extends
 	}
 
 	@SuppressWarnings("unchecked")
-	protected ID save(T entity) {
-		return (ID) super.hibernateTemplate.save(entity);
+	public ID save(T entity) {
+		return (ID) super.getHibernateTemplate().save(entity);
 	}
 
-	protected void delete(T entity) {
+	public void delete(T entity) {
 		try {
-			this.hibernateTemplate.delete(entity);
+			this.getHibernateTemplate().delete(entity);
 		} catch (Exception e) {
 			super.log.error("删除数据失败," + e);
 			throw new DAOException("删除数据失败," + e.getMessage());
 		}
 	}
 
-	protected void delete(ID id) {
+	public void delete(ID id) {
 		delete(getEntityClass(), id);
 	}
 
-	protected void delete(Class<T> clazz, ID id) {
+	public void delete(Class<T> clazz, ID id) {
 		try {
-			Object o = this.hibernateTemplate.get(clazz, id);
-			this.hibernateTemplate.delete(o);
+			Object o = this.getHibernateTemplate().get(clazz, id);
+			this.getHibernateTemplate().delete(o);
 		} catch (Exception e) {
 			super.log.error("删除数据失败," + e);
 			throw new DAOException("删除数据失败," + e.getMessage());

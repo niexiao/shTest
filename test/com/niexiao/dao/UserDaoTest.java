@@ -23,7 +23,7 @@ public class UserDaoTest {
 	@BeforeClass
 	public static void init() {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
-				"classpath:test-application-context.xml");
+				"classpath:config/application-context.xml");
 		// ApplicationContext context = new ClassPathXmlApplicationContext(
 		// "application-context.xml");
 		SessionFactory sessionFactory = (SessionFactory) context
@@ -35,14 +35,13 @@ public class UserDaoTest {
 
 	@Test
 	public void testSaveUser() throws SQLException {
-		Organization org = organizationService
-				.getOrganizationById("5fa94114-1e6a-47bb-aa17-27a123ff58d0");
+		Organization org = organizationService.findById("5fa94114-1e6a-47bb-aa17-27a123ff58d0");
 
 		User user = new User();
 		user.setName("niexiaod");
 		user.setPassword("password");
 		user.setOraganzation(org);
-		String id = userService.addUser(user);
+		String id = userService.add(user);
 		System.out.println("userId :" + id);
 	}
 
@@ -50,21 +49,21 @@ public class UserDaoTest {
 	public void testSaveOrg() throws SQLException {
 		Organization org = new Organization();
 		org.setName("new org");
-		String id = organizationService.addOrganization(org);
+		String id = organizationService.add(org);
 		System.out.println("organizationId :" + id);
 	}
 
 	@Test
 	public void testGetUser() {
 		User user = userService
-				.getUserById("4163d4d5-c8fd-436b-9b76-0306908a0382");
+				.findById("4163d4d5-c8fd-436b-9b76-0306908a0382");
 		System.out.println("organizationId :" + user.getOraganzation().getName());
 	}
 
 	@Test
 	public void testDeleteUser() {
 		String id = "90";
-		userService.deleteUser(id);
+		userService.delete(id);
 	}
 
 	@Ignore

@@ -12,8 +12,7 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<!--这里的路径需要加上Webcontent -->
-				<value>Webcontent/WEB-INF/config/jdbc.properties</value>
+				<value>classpath:config/jdbc.properties</value>
 			</list>
 		</property>
 	</bean>

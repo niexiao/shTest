@@ -22,7 +22,7 @@ public class LoginAction {
 		User user = new User();
 		user.setName("action");
 		user.setPassword(new Date().toLocaleString());
-		userService.addUser(user);
+		userService.add(user);
 		return "welcome";
 	}
 }
