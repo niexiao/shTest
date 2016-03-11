@@ -1,6 +1,7 @@
 package com.niexiao.base.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 public interface BaseDao<T, ID extends Serializable> extends CommonDao {
 
@@ -15,5 +16,11 @@ public interface BaseDao<T, ID extends Serializable> extends CommonDao {
 	public void delete(Class<T> clazz, ID id);
 
 	public void update(T entity);
+
+	void saveEntities(List<T> entities);
+
+	List<T> queryEntityByExample(T entity);
+
+	List<T> queryEntityByExample(T entity, int start, int size);
 
 }

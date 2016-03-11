@@ -1,11 +1,7 @@
 package com.niexiao.base.exception;
 
-
 public class DAOException extends CatchedException {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -5935167937413542509L;
 
 	public DAOException() {
@@ -37,5 +33,4 @@ public class DAOException extends CatchedException {
 		super(e);
 		// TODO Auto-generated constructor stub
 	}
-	
 }
