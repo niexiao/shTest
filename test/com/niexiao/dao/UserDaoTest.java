@@ -1,6 +1,7 @@
 package com.niexiao.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.junit.BeforeClass;
@@ -20,7 +21,6 @@ public class UserDaoTest {
 	private static UserService userService;
 	private static OrganizationService organizationService;
 
-	
 	@BeforeClass
 	public static void init() {
 		@SuppressWarnings("resource")
@@ -38,7 +38,8 @@ public class UserDaoTest {
 
 	@Test
 	public void testSaveUser() throws SQLException {
-		Organization org = organizationService.findById("5fa94114-1e6a-47bb-aa17-27a123ff58d0");
+		Organization org = organizationService
+				.findById("5fa94114-1e6a-47bb-aa17-27a123ff58d0");
 
 		User user = new User();
 		user.setName("niexiaod");
@@ -61,7 +62,8 @@ public class UserDaoTest {
 		User user = userService
 				.findById("4163d4d5-c8fd-436b-9b76-0306908a0382");
 		System.out.println("userName :" + user.getName());
-		System.out.println("organizationId :" + user.getOraganzation().getName());
+		System.out.println("organizationId :"
+				+ user.getOraganzation().getName());
 	}
 
 	@Test
@@ -69,13 +71,22 @@ public class UserDaoTest {
 		String id = "90";
 		userService.delete(id);
 	}
-	
+
 	@Test
-	public void testUpdateUser(){
+	public void testUpdateUser() {
 		User user = userService
 				.findById("4163d4d5-c8fd-436b-9b76-0306908a0382");
 		user.setName("ndnd");
 		userService.update(user);
-		System.out.println("organizationId :" + user.getOraganzation().getName());
+		System.out.println("organizationId :"
+				+ user.getOraganzation().getName());
+	}
+
+	@Test
+	public void testGetAllUser() {
+
+		List<User> users = userService.getAllUsers();
+		System.out.println("users.size():" + users.size());
+		System.out.println("users.get(0).getOraganzation().getName():" + users.get(0).getOraganzation().getName());
 	}
 }

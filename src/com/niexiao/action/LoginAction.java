@@ -16,13 +16,18 @@ public class LoginAction {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String test() {
-		System.out.println("sdf");
-		User user = new User();
-		user.setName("action");
-		user.setPassword(new Date().toLocaleString());
-		userService.add(user);
-		return "welcome";
+		System.out.println("index");
+		return "index";
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(String username, String password) {
+		System.out.println("login");
+		System.out.println("username:" + username);
+		System.out.println("password:" + password);
+
+		return "main";
 	}
 }
