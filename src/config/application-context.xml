@@ -41,13 +41,18 @@
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="datasource" />
 		<!-- 注意：我用的是Annotation的方式配置的Hibernate，这里的property的name是annotatedClasses -->
-		<property name="annotatedClasses">
-			<list>
-				<value>com.niexiao.entity.User</value>
-				<value>com.niexiao.entity.Organization</value>
-				<value>com.niexiao.entity.MenuItem</value>
-			</list>
-		</property>
+<!-- 		<property name="annotatedClasses"> -->
+<!-- 			<list> -->
+<!-- 				<value>com.niexiao.entity.User</value> -->
+<!-- 				<value>com.niexiao.entity.Organization</value> -->
+<!-- 				<value>com.niexiao.entity.MenuItem</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+		<property name="packagesToScan">  
+            <list>  
+                <value>com.niexiao.entity</value>  
+            </list>  
+        </property>  
 		<property name="hibernateProperties">
 			<props>
 				<!-- 设置Hibernate方言 -->

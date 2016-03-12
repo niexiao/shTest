@@ -16,20 +16,20 @@ import com.niexiao.entity.MenuItem;
 @MappedSuperclass
 public abstract class MenuItemEntity extends BaseEntity {
 
-	protected String name;
-	protected String description;
+	private String name;
+	private String description;
 	/**
 	 * 优先级，用于排序
 	 */
-	protected int priority;
-	protected String url;
+	private int priority;
+	private String url;
 
 	@ManyToOne
 	@JoinColumn(name = "father_id")
-	protected MenuItem father;
+	private MenuItem father;
 
 	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "father")
-	protected Set<MenuItem> children;
+	private Set<MenuItem> children;
 
 	public String getName() {
 		return name;
