@@ -25,7 +25,6 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements
 
 	@Override
 	public List<User> getAllUsers() {
-
 		return (List<User>) getUserDao().getAllUsers();
 	}
 }

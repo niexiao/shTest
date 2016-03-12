@@ -10,6 +10,8 @@ import com.niexiao.entity.Organization;
 
 @MappedSuperclass
 public abstract class UserEntity extends BaseEntity {
+	
+	protected String loginId;
 	protected String name;
 	protected String password;
 	
@@ -17,6 +19,14 @@ public abstract class UserEntity extends BaseEntity {
 	@JoinColumn(name="organization_id")
 	protected Organization organization;
 	
+	public String getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
 	public String getName() {
 		return name;
 	}

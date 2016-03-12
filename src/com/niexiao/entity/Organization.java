@@ -1,6 +1,5 @@
 package com.niexiao.entity;
 
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -8,23 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.niexiao.entity.base.organizationEntity;
+import com.niexiao.entity.base.OrganizationEntity;
 
 @Entity
-@Table(name="test_organization")
-public class Organization extends organizationEntity {
+@Table(name = "test_organization")
+public class Organization extends OrganizationEntity {
 
-	@OneToMany(cascade={CascadeType.ALL},mappedBy="organization")
-	private Set<User> users;
 
-	public Set<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}
-	
-	
-	
 }
