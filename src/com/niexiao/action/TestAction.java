@@ -17,11 +17,11 @@ public class TestAction {
 
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test() {
-		System.out.println("test");
-		String fatherId = "ecb1518b-dacc-46b4-be20-22bdce664c70";
-		MenuItem menuItemFather = menuItemService.findById(fatherId);
-		System.out.println("menuItemFather.getChildren().size(): "
-				+ menuItemFather.getChildren().size());
+//		System.out.println("test");
+//		String fatherId = "ecb1518b-dacc-46b4-be20-22bdce664c70";
+//		MenuItem menuItemFather = menuItemService.findById(fatherId);
+//		System.out.println("menuItemFather.getChildren().size(): "
+//				+ menuItemFather.getChildren().size());
 
 		return "test";
 	}
