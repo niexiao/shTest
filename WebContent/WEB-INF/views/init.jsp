@@ -24,9 +24,9 @@
 <script src="<%=path %>/assets/js/jquery.backstretch.min.js"></script>
 <script src="<%=path %>/assets/js/scripts.js"></script>
 <!-- Morris Charts JavaScript -->
-<script src="<%=path %>/assets/js/plugins/morris/raphael.min.js"></script>
-<script src="<%=path %>/assets/js/plugins/morris/morris.min.js"></script>
-<script src="<%=path %>/assets/js/plugins/morris/morris-data.js"></script>
+<%-- <script src="<%=path %>/assets/js/plugins/morris/raphael.min.js"></script> --%>
+<%-- <script src="<%=path %>/assets/js/plugins/morris/morris.min.js"></script> --%>
+<%-- <script src="<%=path %>/assets/js/plugins/morris/morris-data.js"></script> --%>
 
 
  
