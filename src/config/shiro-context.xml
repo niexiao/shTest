@@ -22,12 +22,12 @@
 		</property>
 	</bean>
 
-	<bean id="authcFilter" class="com.niexiao.security.MyAuthenticationFilter" />
+	<bean id="authcFilter" class="com.ogpis.security.MyAuthenticationFilter" />
 
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="authorizingRealm" />
 	</bean>
 
-	<bean id="authorizingRealm" class="com.niexiao.security.MyRealm" />
+	<bean id="authorizingRealm" class="com.ogpis.security.MyRealm" />
 
 </beans>

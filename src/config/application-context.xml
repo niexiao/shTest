@@ -50,7 +50,7 @@
 <!-- 		</property> -->
 		<property name="packagesToScan">  
             <list>  
-                <value>com.niexiao.entity</value>  
+                <value>com.ogpis.entity</value>  
             </list>  
         </property>  
 		<property name="hibernateProperties">
@@ -82,7 +82,7 @@
 	</bean>
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.niexiao" />
+	<context:component-scan base-package="com.ogpis" />
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 </beans>

@@ -22,13 +22,14 @@
 <div id="wrapper">
 	<!-- 网站头及导航栏 -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div id="main_header"></div>
-		<div id="main_nav"></div>
+		<%@ include file="main/main_header.jsp"%>
+<!-- 		<div id="fmain_header"></div> -->
+		<%@ include file="main/main_nav.jsp"%>
 	</nav>
 	<!--网页主体 -->
-	<div id="page-wrapper">
+	<div id="page-wrapper" style="height: 100%;">
 		<div class="container-fluid">
-			<div id="main_center"></div>
+			<%@ include file="main/main_center.jsp"%>
 		</div>
 	</div>
 </div>
@@ -36,9 +37,9 @@
 <script type="text/javascript">
 
 $(function(){
-	$("#main_header").load("<%=path%>/main_header");
-	$("#main_nav").load("<%=path%>/main_nav");
-	$("#main_center").load("<%=path%>/main_center");
+<%-- 	$("#main_header").load("<%=path%>/main_header"); --%>
+<%-- 	$("#main_nav").load("<%=path%>/main_nav"); --%>
+<%-- 	$("#main_center").load("<%=path%>/main_center"); --%>
 });
 
 </script>
